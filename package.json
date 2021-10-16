@@ -1,0 +1,25 @@
+{
+  "name": "awesomitychallenge",
+  "version": "1.0.0",
+  "description": "\"task  force challenge for backend dev\"",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "test",
+    "createTables": "node ./models/tableCreator.js"
+  },
+  "author": "RUKUNDO janvier",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "joi": "^17.4.2",
+    "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.18.1",
+    "nodemailer": "^6.7.0",
+    "nodemon": "^2.0.13",
+    "pg": "^8.7.1",
+    "randomstring": "^1.2.1"
+  }
+}
