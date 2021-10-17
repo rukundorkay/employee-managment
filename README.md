@@ -14,9 +14,8 @@
 * [Features](#features-rocket)
 * [API Endpoints](#api-endpoints-droplet)
 * [Technologies Stack](#technologies-stack-gear)
-* [Contributions](#contribution-guidelines-two_men_holding_hands)
 * [Author](#author-computer)
-* [Acknowledgments](#acknowledgments-bow)
+
 
 
 
