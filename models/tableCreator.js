@@ -41,7 +41,19 @@ CREATE TABLE IF NOT EXISTS manager(
     
     );
 
+
+    INSERT INTO manager(
+      email, firstName, lastName, password,nationalid,phone,dob,position,token,status
+     )VALUES('rukundojanvier250@gmail.com', 'muraxa', 'claire', '$2b$10$IkR383V4b/Rbore/yavYKuasHSb5PnffBBmU0Mzal7rJRBjNoTA1a','120009090903020','078520902','2000-12-31','MANAGER','ITMcFcB','ACTIVE');
+
+     INSERT INTO employee(
+      email, firstName, lastName,code,nationalid,phone,dob,position,createdate,status
+     )VALUES('rukundojanvier250@gmail.com', 'muraxa', 'claire','EMP-jIt','120009090903020','078520902','2000-12-31','MANAGER','2020-12-31','ACTIVE');
+
   `;
+
+  
+  
 
 pool.query(createTables).then(() => {
   pool.end();

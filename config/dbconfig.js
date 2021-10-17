@@ -4,11 +4,11 @@ const { Pool } = pkg;
 
 
 const pool = new Pool({
-    user:'postgres',
-    host:'127.0.0.1',
-    database:'awesomitychallenge',
-    password:'primus',
-    port:5432,
+    user:process.env.DB_USER,
+    host:process.env.DB_HOST,
+    database:process.env.DB_NAME,
+    password:process.env.DB_PASS,
+    
   });
 pool.on('connect', () => {
   console.log(' + Connected to Postgress database...');

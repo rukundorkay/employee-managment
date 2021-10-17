@@ -1,6 +1,7 @@
 import Joi from 'joi';
 import validate from '../helpers/joiHandlers.js';
-
+// 18 year ago from "now"
+const date18YearsAgo = new Date(Date.now() - 1000 * 60 * 60 * 24 * 365 * 18);
 
 const signupValidation = (req,res,next)=>{
 const schema = Joi.object({
@@ -28,16 +29,22 @@ const schema = Joi.object({
             .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } })
             .required(),
 
-        nationalid : Joi.string().required(),
-            //   .pattern(new RegExp('^[1-3](19|20)\d{2}[7-8]\d{7}[0-9]\d{2}$')),
+        nationalid : Joi.string()
+                        .required()
+                        .pattern(new RegExp('^(1|2|3)[0-9]{4}(7|8)[0-9]{7}[0-9]{1}[0-9]{2}$'))
+                        .message("invalid ID"),
               
 
         phone : Joi.string()
-                // .pattern(new RegExp('^(\+?25)?(078|079|075|073|072)\d{7}$'))
-                .required(),
+                .required()
+                .pattern(new RegExp('^(078|079|075|073|072)[0-9]{7}$'))
+                .message("invalid phone number , should look like(0788232421)"),
+                
 
-        DOB : Joi.string()
-               .required(),
+        DOB : Joi.date()
+                 .max(date18YearsAgo)
+                 .message("Manager must be above 18 years")
+               ,
 
         
 

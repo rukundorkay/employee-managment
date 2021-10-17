@@ -15,8 +15,11 @@ const employeeTest = () => {
   chai.use(chaiHttp);
 
   const UserToken = process.env.USER_TOKEN;
+  const User1Token = process.env.USER1_TOKEN;
   
-    describe('Testing  create new employee', () => {
+
+
+  describe('Testing  create new employee', () => {
     it('should return forbidden you must login to proceed', (done) => {
       const newEmployee = {
             FirstName:"muraxa",
